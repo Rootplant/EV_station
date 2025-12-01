@@ -67,6 +67,14 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 등 최신 기술과 공공데�
   <img src="https://github.com/user-attachments/assets/1f9b3dd5-9179-4d13-8854-d83097329722" width="47%" />
 </p>
 
+<!-- 6 -->
+### 👤 아이디&비밀번호 찾기 / 이메일 비밀번호 변경 메세지
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9c259fdd-88e4-46de-b179-c8dd4115f04c" width="47%" />
+  <img src="https://github.com/user-attachments/assets/c492c839-aa1f-4229-bd1c-355af70a325c" width="47%" />
+</p>
+
+
 ---
 
 ## 🛠 기술 스택
