@@ -36,9 +36,10 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 등 최신 기술과 공공데�
 <!-- 2 -->
 ### ⚡ 충전소 지도 / 혼잡도 예측
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e9e539c8-5d5d-47ef-b561-c6b8e32215f1" width="47%" />
-  <img src="" width="47%" />
+  <img src="https://github.com/user-attachments/assets/62fafec1-b7cb-4356-921f-e38b9461aa86" width="47%" />
+  <img src="https://github.com/user-attachments/assets/0cd7d939-1ab3-45bc-aa94-9c68e8649157" width="47%" />
 </p>
+
 
 
 <!-- 3 -->
@@ -62,26 +63,15 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 등 최신 기술과 공공데�
   <img src="https://github.com/user-attachments/assets/d8c274cc-74f1-47a9-bf54-ea16b38c7700" width="47%" />
 </p>
 
-<!-- 6 -->
-### 🏪 주변 편의시설 지도(Kakao Map 등)
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/10347bda-a261-4207-ba53-e0e06a193df3" width="47%" />
-  <img src="https://github.com/user-attachments/assets/90216f2f-c64f-4105-822e-0b46679117b3" width="47%" />
-</p>
 
-<!-- 7 -->
+<!-- 6 -->
 ### 👤 마이페이지 / 관리자 회원관리
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8c9e4469-43c5-4df4-9475-a9d9c3d0fb54" width="47%" />
   <img src="https://github.com/user-attachments/assets/1f9b3dd5-9179-4d13-8854-d83097329722" width="47%" />
 </p>
 
-<!-- 8 -->
-### 📊 예약현황 / 전체 관리페이지
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5a9bb62a-e41e-4022-9e26-2aed53107415" width="47%" />
-  <img src="https://github.com/user-attachments/assets/8f9a8e66-f531-42d9-b3a7-a57229d65ec2" width="47%" />
-</p>
+
 
 
 ---
