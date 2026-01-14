@@ -93,6 +93,7 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 등 최신 기술과 공공데�
 - MyBatis
 - Tomcat
 - Oracle Database
+- Redis (Caching & Session Management)
 
 ### Frontend
 - JSP
