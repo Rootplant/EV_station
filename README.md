@@ -207,7 +207,7 @@ Charging_station/
       <b>정찬호</b>
           </a>
       <br>
-      <sub>풀스택 - 공공데이터 api, 디비삽입, 각종 버그 수정, 지도 클러스터 처리, Redis 캐싱 처리</sub>
+      <sub>풀스택 - 지도 API&공공데이터 API, DB연동, 충전소 위치 검색,지도 클러스터 처리, Redis 캐싱 처리, 버그 수정</sub>
     </td>
   </tr>
 </table>
