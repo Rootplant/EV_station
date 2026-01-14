@@ -42,8 +42,6 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 등 최신 기술과 공공데�
   <img width="253" height="443" alt="image" src="https://github.com/user-attachments/assets/9289147a-63b1-4987-95aa-7761576fc0a9" />
 
 
-  <img src="https://github.com/user-attachments/assets/62fafec1-b7cb-4356-921f-e38b9461aa86" width="32%" />
-  <img src="https://github.com/user-attachments/assets/0cd7d939-1ab3-45bc-aa94-9c68e8649157" width="32%" />
 </p>
 
 <!-- 3 -->
