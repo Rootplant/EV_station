@@ -35,6 +35,8 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 등 최신 기술과 공공데�
 <!-- 2 -->
 ### ⚡ 충전소 지도 / 혼잡도 예측
 <p align="center">
+  <img width="473" height="476" alt="image" src="https://github.com/user-attachments/assets/8b715763-2b49-49f3-a6de-0683423251e6" />
+
   <img src="https://github.com/user-attachments/assets/62fafec1-b7cb-4356-921f-e38b9461aa86" width="32%" />
   <img src="https://github.com/user-attachments/assets/0cd7d939-1ab3-45bc-aa94-9c68e8649157" width="32%" />
 </p>
