@@ -84,6 +84,10 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
 
 ### ⚡ 충전소 지도 / 혼잡도 예측
 <p align="center">
+  <img width="1915" height="913" src="https://github.com/user-attachments/assets/fa0737e6-127a-4f82-b01f-682251937838" />
+</p>
+
+<p align="center">
   <img width="473" height="476" src="https://github.com/user-attachments/assets/8b715763-2b49-49f3-a6de-0683423251e6" />
   <img width="512" height="434" src="https://github.com/user-attachments/assets/cfea937d-6b08-47fd-ae7b-d693a38789f6" />
 </p>
@@ -91,10 +95,6 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
 <p align="center">
   <img width="237" height="374" src="https://github.com/user-attachments/assets/1fbabf0e-5bc3-408a-98c5-d43b5bf8a231" />
   <img width="253" height="443" src="https://github.com/user-attachments/assets/9289147a-63b1-4987-95aa-7761576fc0a9" />
-</p>
-
-<p align="center">
-  <img width="1915" height="913" src="https://github.com/user-attachments/assets/fa0737e6-127a-4f82-b01f-682251937838" />
 </p>
 
 ---
