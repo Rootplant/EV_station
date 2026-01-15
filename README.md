@@ -7,8 +7,10 @@
 ## 📌 프로젝트 소개
 **EV Station**은 실시간 전기차 충전소 정보, 예약, 결제, 고장 신고 등  
 전기차 운전자에게 꼭 필요한 기능을 제공하는 **충전소 통합 정보 플랫폼**입니다.  
-Spring, JSP, Oracle DB, MyBatis, Spring Security 및 공공데이터 API 연동을 통해  
-**지도 기반 실시간 충전소 상태와 혼잡도 정보를 직관적으로 제공**합니다.
+
+공공데이터 기반 충전소 API와 지도 API를 연동하여  
+**충전소 위치, 충전기 상태, 현재 혼잡도 정보를 지도 중심으로 직관적으로 제공**하며,  
+Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성능을 유지하도록 설계되었습니다.
 
 ---
 
@@ -18,16 +20,16 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 및 공공데이터 API 연동�
 
 | 구분 | 담당 내용 |
 |---|---|
-| 🗺 지도 기반 서비스 | **카카오 지도 API 연동**, 충전소 위치 시각화, 마커·클러스터 처리 |
-| 🔌 충전소 API 연동 | **공공데이터 충전소 API 연동**, 실시간 상태 데이터 가공 |
-| 📊 실시간 상태 처리 | 충전기 **사용중 / 사용가능 / 점검중** 상태 반영, 현재 혼잡도 산출 |
-| 🔍 검색 시스템 | 충전소명 / 지역 기반 **검색 시스템 구현** |
-| ⭐ 즐겨찾기 | 사용자별 **충전소 즐겨찾기 기능** 구현 |
-| 📄 상세 페이지 | **충전소 상세 정보 페이지 구현** (상태, 위치, 주변 정보) |
-| ⚡ 성능 최적화 | **Redis 캐싱 적용**, 과도한 API 호출 및 DB 부하 감소 |
-| 🧱 DB 설계 | 충전소·상태·예약·즐겨찾기 관련 **DB 구조 설계 및 연동** |
-| 🎨 UI / UX | 지도 중심 UI 개선, 사용자 동선 고려한 화면 구조 개선 |
-| 🛠 유지보수 | 지도 렌더링/데이터 불일치 이슈 **버그 수정 및 안정화** |
+| 🗺 지도 서비스 | 카카오 지도 API 연동, 충전소 마커 표시 및 클러스터링 |
+| 🔌 충전소 API | 공공데이터 충전소 API 연동 및 실시간 데이터 가공 |
+| 📊 상태/혼잡도 | 충전기 상태(사용중/사용가능/점검중) 기반 현재 혼잡도 산출 |
+| 🔍 검색 기능 | 충전소명 / 지역 기반 검색 시스템 구현 |
+| ⭐ 즐겨찾기 | 사용자별 충전소 즐겨찾기 기능 |
+| 📄 상세 페이지 | 충전소 상세 정보 페이지 구현 |
+| ⚡ 성능 최적화 | Redis 캐싱 적용, API·DB 부하 감소 |
+| 🧱 DB 설계 | 충전소·상태·즐겨찾기 관련 DB 구조 설계 |
+| 🎨 UI / UX | 지도 중심 화면 흐름 개선 |
+| 🛠 유지보수 | 지도·데이터 불일치 버그 수정 |
 
 ---
 
@@ -37,50 +39,36 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 및 공공데이터 API 연동�
   - 회원가입, 로그인/로그아웃, 마이페이지
   - Spring Security 기반 비밀번호 암호화
 
-- 🗺 **지도 기반 충전소 검색 서비스**
-  - 카카오 지도 API 연동
-  - 충전소 위치 마커 표시 및 **클러스터링 처리**
-  - 지도 이동/확대·축소에 따른 동적 마커 렌더링
+- 🗺 **지도 기반 충전소 검색**
+  - 충전소 위치 마커 및 클러스터링
+  - 지도 이동/확대·축소 시 동적 렌더링
 
-- 🔌 **공공데이터 기반 충전소 실시간 정보 연동**
-  - 충전기 상태(사용중 / 사용가능 / 점검중) 실시간 반영
-  - API 데이터 가공 후 화면 표시
+- 🔌 **공공데이터 기반 실시간 충전소 정보**
+  - 충전기 상태 실시간 반영
+  - 데이터 가공 후 UI 표시
 
-- 📊 **충전기 상태 기반 현재 혼잡도 예측**
-  - 충전기 가동 상태를 기준으로 **현재 혼잡도 산출**
-  - 사용자에게 직관적인 혼잡도 지표 제공
+- 📊 **충전기 상태 기반 현재 혼잡도 제공**
+  - 사용중/가용 충전기 비율 기반 혼잡도 계산
 
-- 🔍 **충전소 검색 시스템**
-  - 충전소명 / 지역 기반 검색
-  - 지도 화면과 검색 결과 동기화
-
-- ⭐ **충전소 즐겨찾기 기능**
-  - 사용자별 즐겨찾기 등록/해제
-  - 마이페이지 및 지도 화면에서 빠른 접근 제공
+- 🔍 **검색 & 즐겨찾기**
+  - 충전소 검색
+  - 즐겨찾기 등록 및 빠른 접근
 
 - 📄 **충전소 상세 페이지**
-  - 충전소 위치, 충전기 정보, 현재 상태, 혼잡도 정보 제공
-  - 지도 ↔ 상세 페이지 자연스러운 이동 흐름 구성
+  - 충전소 위치, 상태, 혼잡도, 주변 정보 제공
 
-- 🛠 **고장 신고 & 처리**
-  - 회원 고장 신고 등록
-  - 관리자 처리 및 상태 관리
+- 🛠 **고장 신고 & 관리자 처리**
 
-- 💳 **예약 / 결제 기능**
+- 💳 **예약 / 결제**
   - 충전소 예약
-  - 토스 API 기반 예약금 결제
+  - 토스 API 기반 결제
 
 - 🧑‍💼 **관리자 페이지**
-  - 회원 관리, 고장 처리, 예약 내역 관리
+  - 회원 관리, 고장 처리, 예약 관리
 
 - ⚡ **Redis 기반 성능 최적화**
-  - 빈번히 조회되는 충전소/상태 데이터 캐싱
+  - 빈번한 충전소 데이터 캐싱
   - 공공 API 호출 횟수 감소
-  - 다수 사용자 동시 접속 시 안정적인 응답 유지
-
-- 🎨 **지도 중심 UI / UX 개선**
-  - 사용자 이동 동선 최소화
-  - 지도, 검색, 상세 정보 간 일관된 UX 제공
 
 ---
 
@@ -92,16 +80,61 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 및 공공데이터 API 연동�
   <img src="https://github.com/user-attachments/assets/90d3a052-07a2-495f-82f5-eb90cdf1168e" width="47%" />
 </p>
 
+---
+
 ### ⚡ 충전소 지도 / 혼잡도 예측
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8b715763-2b49-49f3-a6de-0683423251e6" width="47%" />
-  <img src="https://github.com/user-attachments/assets/cfea937d-6b08-47fd-ae7b-d693a38789f6" width="47%" />
+  <img width="473" height="476" src="https://github.com/user-attachments/assets/8b715763-2b49-49f3-a6de-0683423251e6" />
+  <img width="512" height="434" src="https://github.com/user-attachments/assets/cfea937d-6b08-47fd-ae7b-d693a38789f6" />
 </p>
+
+<p align="center">
+  <img width="237" height="374" src="https://github.com/user-attachments/assets/1fbabf0e-5bc3-408a-98c5-d43b5bf8a231" />
+  <img width="253" height="443" src="https://github.com/user-attachments/assets/9289147a-63b1-4987-95aa-7761576fc0a9" />
+</p>
+
+<p align="center">
+  <img width="1915" height="913" src="https://github.com/user-attachments/assets/fa0737e6-127a-4f82-b01f-682251937838" />
+</p>
+
+---
 
 ### 🛠 고장신고 / 관리자 고장처리
 <p align="center">
   <img src="https://github.com/user-attachments/assets/61e75082-d0f4-4c17-9fcd-16fbbc52f89a" width="47%" />
   <img src="https://github.com/user-attachments/assets/da23acb3-0335-47c6-a022-182a8a923cc3" width="47%" />
+</p>
+
+---
+
+### 📢 공지사항 / 자유게시판
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/56ea9b5c-9e2c-4dae-9eed-633dfb8eac61" width="47%" />
+  <img src="https://github.com/user-attachments/assets/cca601d6-b109-4a06-94ed-b90c4a7c3706" width="47%" />
+</p>
+
+---
+
+### 💳 예약 결제 / 결제 성공·실패
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e0f450e5-937a-435b-a47e-69e63e8c48bd" width="47%" />
+  <img src="https://github.com/user-attachments/assets/d8c274cc-74f1-47a9-bf54-ea16b38c7700" width="47%" />
+</p>
+
+---
+
+### 👤 마이페이지 / 관리자 회원관리
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8c9e4469-43c5-4df4-9475-a9d9c3d0fb54" width="47%" />
+  <img src="https://github.com/user-attachments/assets/1f9b3dd5-9179-4d13-8854-d83097329722" width="47%" />
+</p>
+
+---
+
+### 🔐 아이디 & 비밀번호 찾기
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9c259fdd-88e4-46de-b179-c8dd4115f04c" width="47%" />
+  <img src="https://github.com/user-attachments/assets/c492c839-aa1f-4229-bd1c-355af70a325c" width="47%" />
 </p>
 
 ---
@@ -114,50 +147,22 @@ Spring, JSP, Oracle DB, MyBatis, Spring Security 및 공공데이터 API 연동�
 - MyBatis
 - Tomcat
 - Oracle Database
-- Redis (Caching & Session Management)
+- Redis
 
 ### Frontend
 - JSP
-- HTML5, CSS3, JavaScript
+- HTML5 / CSS3 / JavaScript
 - jQuery
 
-### DevOps & Tools
+### Tools
 - Git / GitHub
 - Gradle
 - Postman
 
 ---
 
-## 📁 프로젝트 폴더 구조
+## 💡 한 줄 요약
 
-```plaintext
-Charging_station/
-├─ src/main/java/com.boot/
-│  ├─ Board/
-│  ├─ common.dto/
-│  ├─ fix/
-│  ├─ login/
-│  ├─ Main_Page/
-│  ├─ MY_Page/
-│  ├─ Notice/
-│  ├─ Reservation/
-│  ├─ CacheConfig.java
-│  └─ ChargingStationApplication.java
-│
-├─ src/main/resources/
-│  └─ ...
-│
-├─ src/main/webapp/
-│  └─ WEB-INF/views/
-│     ├─ board/
-│     ├─ common/
-│     ├─ fix/
-│     ├─ login_page/
-│     ├─ my_page/
-│     └─ notice/
-│
-├─ build.gradle
-├─ gradlew
-├─ gradlew.bat
-├─ dummy_data.sql
-└─ settings.gradle
+> **공공데이터 기반 충전소 API와 지도 서비스를 연동하고,  
+충전기 상태·혼잡도를 실시간으로 가공하여 Redis로 성능을 최적화한  
+지도 중심 전기차 충전소 플랫폼**
