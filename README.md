@@ -97,7 +97,8 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
 ### 🔌 충전기 상태 기반 실시간 혼잡도 산출
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fa0737e6-127a-4f82-b01f-682251937838" width="90%" />
+  <img src="https://github.com/user-attachments/assets/1fbabf0e-5bc3-408a-98c5-d43b5bf8a231" width="45%" />
+  <img src="https://github.com/user-attachments/assets/9289147a-63b1-4987-95aa-7761576fc0a9" width="45%" />
 </p>
 
 📌 **설명**
@@ -115,8 +116,7 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
 ### 🔍 충전소 검색 & 즐겨찾기
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1fbabf0e-5bc3-408a-98c5-d43b5bf8a231" width="45%" />
-  <img src="https://github.com/user-attachments/assets/9289147a-63b1-4987-95aa-7761576fc0a9" width="45%" />
+  <img src="https://github.com/user-attachments/assets/fa0737e6-127a-4f82-b01f-682251937838" width="90%" />
 </p>
 
 📌 **설명**
