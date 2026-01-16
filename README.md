@@ -152,6 +152,11 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
 
 ## 📸 서비스 화면 예시
 
+<details>
+<summary><strong>📂 클릭하여 서비스 화면 예시 펼쳐보기</strong></summary>
+
+<br>
+
 ### 🔐 로그인 / 🧾 회원가입
 <p align="center">
   <img src="https://github.com/user-attachments/assets/305dc810-6546-4b67-b403-b15eb5d3e120" width="47%" />
@@ -214,6 +219,9 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
   <img src="https://github.com/user-attachments/assets/9c259fdd-88e4-46de-b179-c8dd4115f04c" width="47%" />
   <img src="https://github.com/user-attachments/assets/c492c839-aa1f-4229-bd1c-355af70a325c" width="47%" />
 </p>
+
+</details>
+
 
 ---
 
