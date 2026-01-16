@@ -114,8 +114,7 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
 
 ### 🔍 충전소 검색 & 즐겨찾기
 
-<img width="886" height="862" alt="image" src="https://github.com/user-attachments/assets/4871bf6a-25a9-4284-b688-3c990b1cbfad" />
-<img width="278" height="82" alt="image" src="https://github.com/user-attachments/assets/0df548b6-1ead-4787-b43b-3e1d206b66b7" />
+<img width="855" height="859" alt="image" src="https://github.com/user-attachments/assets/784e270d-53f7-4616-9e26-12dff4a11e85" />
 
 
 📌 **설명**
