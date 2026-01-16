@@ -71,6 +71,86 @@ Redis 캐싱을 활용해 대규모 데이터 환경에서도 안정적인 성�
   - 공공 API 호출 횟수 감소
 
 ---
+## 🔍 내가 구현한 핵심 기능
+
+---
+
+### 🗺 지도 기반 충전소 조회 & 클러스터링
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fa0737e6-127a-4f82-b01f-682251937838" width="90%" />
+</p>
+
+📌 **설명**
+
+- 카카오 지도 API 연동
+- 충전소 좌표 기반 마커 표시
+- 지도 확대/축소 시 클러스터링 적용
+- 지도 이동 이벤트에 따른 동적 데이터 렌더링
+
+👉 대규모 충전소 데이터 환경에서도  
+지도 성능 저하 없이 안정적인 사용자 경험 제공
+
+---
+
+### 🔌 충전기 상태 기반 실시간 혼잡도 산출
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8b715763-2b49-49f3-a6de-0683423251e6" width="45%" />
+  <img src="https://github.com/user-attachments/assets/cfea937d-6b08-47fd-ae7b-d693a38789f6" width="45%" />
+</p>
+
+📌 **설명**
+
+- 공공데이터 충전기 상태 코드 가공
+- 사용중 / 사용가능 / 점검중 상태 분류
+- 가용 충전기 비율 기반 혼잡도 계산
+- 지도 및 상세 페이지 UI에 즉시 반영
+
+👉 단순 상태 조회가 아닌  
+**사용자 체감 혼잡도 정보 제공**
+
+---
+
+### 🔍 충전소 검색 & 즐겨찾기
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1fbabf0e-5bc3-408a-98c5-d43b5bf8a231" width="45%" />
+  <img src="https://github.com/user-attachments/assets/9289147a-63b1-4987-95aa-7761576fc0a9" width="45%" />
+</p>
+
+📌 **설명**
+
+- 충전소명 / 지역 기반 검색 기능
+- 사용자별 즐겨찾기 등록
+- 즐겨찾기 충전소 빠른 접근 제공
+
+---
+
+### 📄 충전소 상세 페이지
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/473b715763-2b49-49f3-a6de-0683423251e6" width="45%" />
+</p>
+
+📌 **설명**
+
+- 충전소 위치, 충전기 목록 제공
+- 상태·혼잡도 정보 통합 표시
+- 지도 → 상세 페이지 자연스러운 사용자 흐름 구성
+
+---
+
+### ⚡ Redis 기반 성능 최적화
+
+📌 **설명**
+
+- 충전소 기본 정보 및 상태 데이터 Redis 캐싱
+- 공공 API 호출 횟수 감소
+- 지도 이동·검색 시 DB 부하 최소화
+- 다수 사용자 접근 환경에서도 안정적인 응답 속도 유지
+
+---
 
 ## 📸 서비스 화면 예시
 
